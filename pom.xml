@@ -39,11 +39,11 @@
         
     </build>
     
-    <!-- <repositories>
-    <repository>
-        <id>atlassian-public</id>
-        <url>https://packages.atlassian.com/maven/repository/public</url>
-    </repository>
-</repositories> -->
+<distributionManagement>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/sunilsinghc/mvn-gcr-local</url>
+        </repository>
+</distributionManagement>
 </project>
 
