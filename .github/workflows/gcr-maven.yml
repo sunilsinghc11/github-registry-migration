@@ -38,4 +38,4 @@ jobs:
 
       # Download and test the package from GitHub Packages
       - name: Download package from GitHub Packages
-        run: mvn dependency:get -Dartifact=sunilsinghc11:mvn-gcr-local:0.0.1
+        run: mvn dependency:get -Dartifact=sunilsinghc11:mvn-gcr-local:3.0-SNAPSHOT
