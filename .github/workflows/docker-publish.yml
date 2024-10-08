@@ -21,8 +21,8 @@ jobs:
 
     # Build the Docker image
     - name: Build the Docker image
-      run: docker build . -t ghcr.io/${{ github.repository }}/myNode-docker-image:latest
+      run: docker build . -t ghcr.io/${{ github.repository }}/mynode-docker-image:latest
 
     # Push the Docker image to GitHub Packages
     - name: Push the Docker image
-      run: docker push ghcr.io/${{ github.repository }}/myNode-docker-image:latest
+      run: docker push ghcr.io/${{ github.repository }}/mynode-docker-image:latest
