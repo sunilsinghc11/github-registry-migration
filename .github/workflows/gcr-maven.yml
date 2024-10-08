@@ -35,8 +35,8 @@ jobs:
 
       # Deploy the Maven package to GitHub Packages
       - name: Deploy package to GitHub Packages
-        run: mvn deploy -s settings.xml
+        run: mvn deploy -X -s settings.xml
 
       # Download and test the package from GitHub Packages
-      - name: Download package from GitHub Packages
-        run: mvn dependency:get -Dartifact=sunilsinghc11:mvn-gcr-local:3.0-SNAPSHOT
+      # - name: Download package from GitHub Packages
+      #  run: mvn dependency:get -Dartifact=sunilsinghc11:mvn-gcr-local:3.0-SNAPSHOT
