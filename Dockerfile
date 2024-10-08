@@ -1,11 +1,18 @@
-# base image https://hub.docker.com/layers/library/openjdk/17-jdk-alpine/
-FROM openjdk:17-jdk-alpine
+# Use Node.js as the base image
+FROM node:14
 
-ENV JAR_FILE my-maven-project-3.0-SNAPSHOT.jar
+# Set the working directory
+WORKDIR /usr/src/app
 
-WORKDIR /app
+# Copy package.json and install dependencies
+COPY package*.json ./
+RUN npm install
 
-COPY target/${JAR_FILE} /app/
+# Copy the rest of the application code
+COPY . .
 
-# Set the command to run the Spring Boot application
-CMD java -jar ${JAR_FILE} 
+# Expose the application port
+EXPOSE 8080
+
+# Start the application
+CMD ["node", "app.js"]
