@@ -1,0 +1,24 @@
+{
+  "name": "my-node-app",
+  "version": "1.0.0",
+  "description": "A simple Node.js application for demonstration purposes.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js", 
+    "build": "echo 'No build step defined.'",
+    "test": "echo 'No tests defined.'"
+  },
+  "keywords": [
+    "node",
+    "example",
+    "github-packages"
+  ],
+  "author": "Sunil Singh",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}
