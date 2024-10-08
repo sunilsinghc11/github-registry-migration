@@ -40,10 +40,15 @@
     </build>
     
 <distributionManagement>
-        <repository>
-            <id>github</id>
-            <url>https://maven.pkg.github.com/sunilsinghc11/mvn-gcr-local</url>
-        </repository>
+    <repository>
+        <id>github</id>
+        <url>https://maven.pkg.github.com/sunilsinghc11/mvn-gcr-local</url>
+    </repository>
+    <snapshotRepository>
+        <id>github</id>
+        <url>https://maven.pkg.github.com/sunilsinghc11/mvn-gcr-local</url>
+    </snapshotRepository>
 </distributionManagement>
+
 </project>
 
