@@ -1,0 +1,39 @@
+name: Node.js CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    # Checkout the repository code
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Set up Node.js environment
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16' # Specify the Node.js version you want
+
+    # Install dependencies
+    - name: Install dependencies
+      run: npm install
+
+    # Run tests (optional, modify as needed)
+    - name: Run tests
+      run: npm test
+
+    # Build the project (optional, modify as needed)
+    - name: Build the project
+      run: npm run build
+
+    # Publish to npm (requires authentication)
+    - name: Publish to npm
+      run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.PAT_TOKEN }}  # Add NPM token to repository secrets
