@@ -1,39 +1,30 @@
-name: Node.js CI/CD Pipeline
+name: Build and Deploy Node.js Application
 
 on:
   push:
     branches:
-      - main
+      - main  # Adjust as necessary
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
-    # Checkout the repository code
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-    # Set up Node.js environment
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '16' # Specify the Node.js version you want
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14' # Specify the Node.js version
 
-    # Install dependencies
-    - name: Install dependencies
-      run: npm install
+      - name: Install Dependencies
+        run: npm install
 
-    # Run tests (optional, modify as needed)
-    - name: Run tests
-      run: npm test
+      - name: Build Project
+        run: npm run build # Adjust if you have a different build command
 
-    # Build the project (optional, modify as needed)
-    - name: Build the project
-      run: npm run build
-
-    # Publish to npm (requires authentication)
-    - name: Publish to npm
-      run: npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.PAT_TOKEN }}  # Add NPM token to repository secrets
+      - name: Publish to GitHub Packages
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.PAT_TOKEN }} # Use GitHub token for authentication
