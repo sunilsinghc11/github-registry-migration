@@ -2,9 +2,8 @@ name: Node.js CI
 
 on:
   push:
-    branches: [main]  # Change to your target branch
-  pull_request:
-    branches: [main]
+    branches: dev-nodejs  # Change to your target branch
+
 
 jobs:
   build:
