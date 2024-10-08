@@ -26,8 +26,8 @@ jobs:
       - name: Configure Maven settings
         run: |
           mkdir -p ~/.m2
-          echo "<settings><servers><server><id>github</id><username>${{ github.actor }}</username><password>${{ secrets.PAT_TOKEN }}</password></server></servers></settings>" > ~/.m2/settings.xml
-          settings.xml
+          echo "<settings><servers><server><id>github</id><username>${{ github.actor }}</username><password>${{ secrets.PAT_TOKEN }}</password></server></servers></settings>" > settings.xml
+        
 
       # Build the project with Maven
       - name: Build with Maven
