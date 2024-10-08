@@ -3,7 +3,7 @@ name: Build and Deploy Node.js Application
 on:
   push:
     branches:
-      - main  # Adjust as necessary
+      - dev-nodejs  # Adjust as necessary
 
 jobs:
   build:
