@@ -1,5 +1,5 @@
 {
-  "name": "@sunilsinghc11/github-registry-migration/my-node-app",
+  "name": "@sunilsinghc11/github-registry-migration",
   "version": "1.0.0",
   "description": "A simple Node.js application for demonstration purposes.",
   "main": "app.js",
